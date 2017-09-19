@@ -1,0 +1,23 @@
+{
+  "name": "inquirer-cierrastrickland",
+  "version": "1.0.0",
+  "description": "inquirer cierra strickland - pizza app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OTCCIS131/inquirer-cierrastrickland.git"
+  },
+  "author": "cierra strickland <cs0856663@otc.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OTCCIS131/inquirer-cierrastrickland/issues"
+  },
+  "homepage": "https://github.com/OTCCIS131/inquirer-cierrastrickland#readme",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "inquirer": "^3.3.0"
+  }
+}
