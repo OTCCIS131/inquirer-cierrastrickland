@@ -1,19 +1,50 @@
 const chalk = require('chalk')
-var inquire = require('inquirer')
+var inquirer = require('inquirer')
 
 let questions = [{
-    message : "What size of pizza do you need:",
     type : "list",
-    small : "small",
-    medium : "medium",
-    large : "large",
-    xlarge : "xlarge",
-    jumbo : "jumbo is the way to go"
+    message : "What size of pizza would you like?",
+    name: "size",
+    choices : ["Small", "Medium", "Large", "XLarge", "Jumbo"]
 },{
+    type : "confirm",
     message : "Would you like extra cheese?",
-    type : "confirm"
+    name: "cheese"
+},{
+    type : "checkbox",
+    message : "What toppings would you like?",
+    name : "toppings",
+    choices : ["pepperoni", "sausage", "ham", "bacon", "peppers", "onions", "pineapple", "mushrooms", "beef"]
 }]
 
-inquire.prompt([questions]).then(function (answers){
-console.log(answers)
+let order = [{
+    type : "confirm",
+    message : "Is your order correct?",
+    name : "order"
+}]
+
+
+inquirer.prompt(questions).then(function (answers){
+console.log(chalk.underline.red("***Your order is listed below***"))
+console.log(chalk.cyan("Size: " + chalk.bold.white(answers.size)))
+
+if(answers.cheese == true){
+    console.log(chalk.cyan("Extra Cheese: ") + chalk.bold.white("Yes"))
+}
+else{
+    console.log(chalk.cyan("Extra Cheese: ") + chalk.bold.white("No"))
+}
+
+console.log(chalk.cyan("Toppings: ") + chalk.bold.white(answers.toppings))
+console.log(" ")
+
+inquirer.prompt(order).then(function(answers){
+    if(answers.order == true){
+        console.log(chalk.yellow("Hoorayy! Your order is on the way!! :-)"))
+    }
+    else{
+        console.log(chalk.red("Oh no!! Sorry for the inconvience :-("))
+    }
 })
+})
+
