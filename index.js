@@ -23,6 +23,12 @@ let order = [{
     name : "order"
 }]
 
+console.log(chalk.bold.cyan("*******************************************************"))
+console.log(chalk.bold.cyan("*                                                     *"))
+console.log(chalk.bold.cyan("*            Welcome to Everything Pizza!             *"))
+console.log(chalk.bold.cyan("*              Please take your order                 *"))
+console.log(chalk.bold.cyan("*                                                     *"))
+console.log(chalk.bold.cyan("*******************************************************"))
 
 inquirer.prompt(questions).then(function (answers){
 console.log(chalk.underline.red("***Your order is listed below***"))
